@@ -1,1 +1,20 @@
-1. npx create-next-app .
+1.initial NextJS:  npx create-next-app .
+2.uninstall eslint and eslint-config-next: npm uninstall eslint-config-next
+3. delete file: .eslintrc.json
+4. delete Api folder: pages/api/...
+5. _app.js --> convert normal function to arrow function.
+{
+  Before: 
+  export default function App({ Component, pageProps }) {
+  return <Component {...pageProps} />
+
+  After: 
+  const App = ({ Component, pageProps }) => <Component {...pageProps} />;
+
+export default App;
+}
+
+} 
+
+6. index.js page: delete all and type rafce: change function name , index--> Home  
+7. delete Home.module.css file: styles/Home.module.css
