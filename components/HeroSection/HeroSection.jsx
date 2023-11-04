@@ -1,49 +1,91 @@
-import React from "react";
-import Image from "next/image";
-
-//INTERNAL IMPORT
-import Style from "./HeroSection.module.css";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addSelectedImage,
+  removeSelectedImage,
+  deleteImage,
+  sortImages,
+} from "../../Store/Slice/imageSlice";
+import ImageDraggable from "./Image/ImageDraggable";
 import { Button } from "../componentsIndex";
-import images from "../../public/images";
+import Style from "./HeroSection.module.css";
 
 const HeroSection = () => {
-  const ImagesArray = [
-    images.image1,
-    images.image2,
-    images.image3,
-    images.image4,
-    images.image5,
-    images.image6,
-    images.image7,
-    images.image8,
-    images.image9,
-    images.image10,
-    images.image11,
-  ];
+  const dispatch = useDispatch();
+  // const { ImagesArray, selectedImages } = useSelector((state) => state.images);
+  const { ImagesArray, selectedImages, featuredImageId } = useSelector(
+    (state) => state.images
+  );
+  const [selectedSortOption, setSelectedSortOption] = useState("");
+  const handleCheckboxChange = (id) => {
+    if (selectedImages.includes(id)) {
+      dispatch(removeSelectedImage(id));
+    } else {
+      dispatch(addSelectedImage(id));
+    }
+  };
+
+  const handleDeleteClick = () => {
+    selectedImages.forEach((id) => {
+      dispatch(deleteImage(id));
+    });
+  };
+  const handleSortChange = (option) => {
+    setSelectedSortOption(option);
+    if (option === "asc" || option === "desc") {
+      dispatch(sortImages(option));
+    }
+  };
   return (
     <div className={Style.heroSection}>
       <div className={Style.heroSection_box}>
         <div className={Style.heroSection_box_left}>
-          {ImagesArray.map((imageUrl, index) => (
-            <Image
-              key={index}
-              src={imageUrl}
-              alt={`Image ${index}`}
-              className="gallery-image"
-              width={300}
-              height={200}
-            />
-          ))}
-
+          <div className={Style.sortDropdown}>
+            <select
+              value={selectedSortOption}
+              onChange={(e) => handleSortChange(e.target.value)}
+            >
+              <option value="">Select Sorting Option</option>
+              <option value="asc">Sort Ascending</option>
+              <option value="desc">Sort Descending</option>
+            </select>
+          </div>
+          <Button btnName={"Delete"} handleClick={handleDeleteClick} />
           {/* {ImagesArray.map((image, index) => (
-            <Image
-              key={index}
-              src={`/images/${image}`}
-              alt={`Image ${index}`}
-              width={300}
-              height={200}
-            />
+            <div key={image.id} className="gallery-image">
+              <input
+                type="checkbox"
+                checked={selectedImages.includes(image.id)}
+                onChange={() => handleCheckboxChange(image.id)}
+              />
+              <ImageDraggable
+                key={image.id}
+                el={image}
+                i={index}
+                setSelectedIndex={handleCheckboxChange}
+              />
+            </div>
           ))} */}
+          {ImagesArray.map((image, index) => (
+            <div
+              key={image.id}
+              className={`gallery-image ${
+                image.id === featuredImageId ? Style.featuredImage : ""
+              }`}
+            >
+              <input
+                type="checkbox"
+                checked={selectedImages.includes(image.id)}
+                onChange={() => handleCheckboxChange(image.id)}
+              />
+              <ImageDraggable
+                key={image.id}
+                el={image}
+                i={index}
+                setSelectedIndex={handleCheckboxChange}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>

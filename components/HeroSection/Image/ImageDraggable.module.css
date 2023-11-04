@@ -1,0 +1,12 @@
+/* ImageDraggable.module.css */
+
+.draggableContainer {
+  display: block; /* Set your desired height for the container */
+  background-color: #f0f0f0;
+  /* Set background color for the container */
+}
+
+.draggable-image {
+  position: absolute;
+  cursor: grab;
+}
