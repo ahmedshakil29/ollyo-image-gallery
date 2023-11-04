@@ -11,6 +11,7 @@ import { Button } from "../componentsIndex";
 import Style from "./HeroSection.module.css";
 
 const HeroSection = () => {
+  const [count, setCount] = useState(0);
   const dispatch = useDispatch();
   // const { ImagesArray, selectedImages } = useSelector((state) => state.images);
   const { ImagesArray, selectedImages, featuredImageId } = useSelector(
@@ -51,21 +52,6 @@ const HeroSection = () => {
             </select>
           </div>
           <Button btnName={"Delete"} handleClick={handleDeleteClick} />
-          {/* {ImagesArray.map((image, index) => (
-            <div key={image.id} className="gallery-image">
-              <input
-                type="checkbox"
-                checked={selectedImages.includes(image.id)}
-                onChange={() => handleCheckboxChange(image.id)}
-              />
-              <ImageDraggable
-                key={image.id}
-                el={image}
-                i={index}
-                setSelectedIndex={handleCheckboxChange}
-              />
-            </div>
-          ))} */}
           {ImagesArray.map((image, index) => (
             <div
               key={image.id}
