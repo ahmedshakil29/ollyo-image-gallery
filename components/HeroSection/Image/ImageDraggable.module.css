@@ -1,11 +1,10 @@
-/* .gallery-image input[type="checkbox"] ~ div {
-  width: 100px;
-  height: 100px;
+.gallery-image input[type="checkbox"] ~ div {
+  width: 200px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid #ccc;
-  margin: 0 10px 10px 0;
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -15,24 +14,60 @@
 .gallery-image input[type="checkbox"] ~ div img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+}
+
+/* ImageDraggable.module.css */
+/* .draggableContainer {
+  cursor: pointer;
+  margin-bottom: 20px;
+  user-select: none;
+}
+
+.draggableImage {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
 } */
 
-.gallery-image input[type="checkbox"] ~ div {
-  /* width: 200px; 
-  height: 200px; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #ccc; /* Add border or any other styles */
-  position: relative;
-  overflow: hidden;
+/* ImageDraggable.module.css */
+/* .draggableContainer {
   cursor: pointer;
-  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  user-select: none;
 }
 
-.gallery-image input[type="checkbox"] ~ div img {
-  width: 100%;
-  height: 100%;
+.draggableImage {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 400px; 
+  height: 300px; 
   object-fit: cover;
 }
+
+.draggableImage:nth-child(n + 2) {
+  width: 200px; 
+  height: 200px;
+} */
+
+/* ImageDraggable.module.css */
+/* .draggableContainer {
+  cursor: pointer;
+  margin-bottom: 20px;
+  user-select: none;
+}
+
+.draggableImage {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px; /* Default width for images */
+/* height: 200px; 
+  object-fit: cover;
+} */
+
+/* .firstImage {
+  width: 400px; 
+  height: 300px; 
+} */

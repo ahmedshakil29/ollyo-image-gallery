@@ -1,3 +1,8 @@
+//Module Name: Image Gallery
+//developed by:Shakil Ahmed
+//developed for:Ollyo
+//All right reserved to Shakil Ahmed
+
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -11,13 +16,12 @@ import { Button } from "../componentsIndex";
 import Style from "./HeroSection.module.css";
 
 const HeroSection = () => {
-  const [count, setCount] = useState(0);
   const dispatch = useDispatch();
-  // const { ImagesArray, selectedImages } = useSelector((state) => state.images);
   const { ImagesArray, selectedImages, featuredImageId } = useSelector(
     (state) => state.images
   );
   const [selectedSortOption, setSelectedSortOption] = useState("");
+  //check uncheck selected images
   const handleCheckboxChange = (id) => {
     if (selectedImages.includes(id)) {
       dispatch(removeSelectedImage(id));
@@ -25,22 +29,27 @@ const HeroSection = () => {
       dispatch(addSelectedImage(id));
     }
   };
-
+  //deleted selected images
   const handleDeleteClick = () => {
     selectedImages.forEach((id) => {
       dispatch(deleteImage(id));
     });
   };
+  //sorting selected images
   const handleSortChange = (option) => {
     setSelectedSortOption(option);
     if (option === "asc" || option === "desc") {
       dispatch(sortImages(option));
     }
   };
+
+  const selectedCount = selectedImages.length;
+  const message = selectedCount > 0 ? ` selected ${selectedCount} images.` : "";
+
   return (
     <div className={Style.heroSection}>
       <div className={Style.heroSection_box}>
-        <div className={Style.heroSection_box_left}>
+        <div className={Style.heroSection_box_header}>
           <div className={Style.sortDropdown}>
             <select
               value={selectedSortOption}
@@ -51,7 +60,18 @@ const HeroSection = () => {
               <option value="desc">Sort Descending</option>
             </select>
           </div>
-          <Button btnName={"Delete"} handleClick={handleDeleteClick} />
+          <div className={Style.HeroSection_message}>{message}</div>
+          {selectedCount > 0 && (
+            <Button btnName={"Delete"} handleClick={handleDeleteClick} />
+          )}
+        </div>
+        {/* <div className={Style.HeroSection_box_button}>
+            <div className={Style.HeroSection_message}>{message}</div>
+            {selectedCount > 0 && (
+              <Button btnName={"Delete"} handleClick={handleDeleteClick} />
+            )}
+          </div> */}
+        <div className={Style.rowContainer}>
           {ImagesArray.map((image, index) => (
             <div
               key={image.id}

@@ -1,26 +1,237 @@
-/* .heroSection {
-  width: 100%;
-  height: 100vh;
+/* .gallery-image {
+  position: relative;
+  width: 100px;
+  height: 100px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.checkboxContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px;
+}
+
+.checkbox {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.gallery-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.sortDropdown {
+  margin-bottom: 20px;
+}
+.rowContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-self: center;
+  align-content: center;
+}
+
+.gallery-image {
+  flex: 1 1 calc(25% - 10px);
+  position: relative;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+} */
+
+/* HeroSection.module.css */
+/* .heroSection {
+  padding: 20px;
+  background-color: #f7f7f7;
 }
 
 .heroSection_box {
-  width: 80%;
-  max-width: 1200px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
 }
 
 .heroSection_box_left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .sortDropdown {
   margin-bottom: 20px;
+}
+
+.HeroSection_box_button {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.HeroSection_message {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.rowContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.gallery-image {
+  flex: 1 1 calc(25% - 10px);
+  position: relative;
+}
+
+.featuredImage {
+  border: 2px solid #007bff;
 } */
+
+/* Rest of your existing CSS */
+
+/* HeroSection.module.css */
+/* .heroSection {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.heroSection_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heroSection_box_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.sortDropdown {
+  margin-right: 20px;
+}
+
+.rowContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-image {
+  position: relative;
+  margin: 10px;
+}
+
+.featuredImage {
+  border: 2px solid #ff5733; 
+}
+
+.HeroSection_message {
+  margin-left: 20px;
+  font-size: 18px;
+} */
+
+/* HeroSection.module.css */
+/* .heroSection {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.heroSection_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heroSection_box_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.sortDropdown {
+  margin-right: 20px;
+}
+
+.rowContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-image {
+  position: relative;
+  margin: 10px;
+}
+
+.featuredImage {
+  border: 2px solid #ff5733; 
+}
+
+.sortDropdown,
+.HeroSection_message,
+.button {
+  display: flex;
+  align-items: center;
+} */
+
+/* HeroSection.module.css */
+.heroSection {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.heroSection_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heroSection_box_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.sortDropdown {
+  margin-right: 10px;
+  height: 50px;
+}
+
+.HeroSection_message {
+  margin-right: 10px;
+}
+
+.rowContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.sortDropdown,
+.HeroSection_message,
+.button {
+  display: flex;
+  align-items: center;
+}
