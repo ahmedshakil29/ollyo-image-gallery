@@ -25,7 +25,6 @@
   display: flex;
   align-items: center;
 }
-
 .heroSection_box {
   width: 100%;
   margin: 0 auto;
@@ -35,18 +34,18 @@
   gap: 2rem;
   border-radius: 10px;
 }
-.rowContainer {
+.heroSection_box_item {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   border-radius: 2rem;
 }
-.rowContainer_box {
+.heroSection_box_item_box {
   position: relative;
   transition: all 0.3s ease;
 }
 
-.checkboxOverlay {
+.heroSection_box_item_box_checkboxOverlay {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -54,6 +53,6 @@
   opacity: 1; /* Eta 0 hbe. */
   transition: opacity 0.3s ease;
 }
-.rowContainer_box:hover .checkboxOverlay {
+.heroSection_box_item_box:hover .heroSection_box_item_box_checkboxOverlay {
   opacity: 1;
 }

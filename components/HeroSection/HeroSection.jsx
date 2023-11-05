@@ -11,7 +11,7 @@ import {
   deleteImage,
   sortImages,
 } from "../../Store/Slice/imageSlice";
-import ImageDraggable from "./Image/ImageDraggable";
+import ImageDraggable from "./ImageDrag/ImageDrag";
 import { Button } from "../componentsIndex";
 import Style from "./HeroSection.module.css";
 
@@ -65,18 +65,12 @@ const HeroSection = () => {
         )}
       </div>
       <div className={Style.heroSection_box}>
-        <div className={Style.rowContainer}>
+        <div className={Style.heroSection_box_item}>
           {ImagesArray.map((image, index) => (
-            <div
-              key={image.id}
-              className={Style.rowContainer_box}
-              // className={`gallery-image ${
-              //   image.id === featuredImageId ? Style.featuredImage : ""
-              // }`}
-            >
+            <div key={image.id} className={Style.heroSection_box_item_box}>
               <input
                 type="checkbox"
-                className={Style.checkboxOverlay}
+                className={Style.heroSection_box_item_box_checkboxOverlay}
                 checked={selectedImages.includes(image.id)}
                 onChange={() => handleCheckboxChange(image.id)}
               />
