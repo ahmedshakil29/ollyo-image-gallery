@@ -56,3 +56,51 @@
 .heroSection_box_item_box:hover .heroSection_box_item_box_checkboxOverlay {
   opacity: 1;
 }
+
+@media only screen and (max-width: 1024px) {
+  /* Styles for screens with a maximum width of 1024px (2/3 of standard width) */
+  .heroSection {
+    margin-bottom: 3rem;
+  }
+
+  .heroSection_header {
+    width: 80%;
+  }
+
+  .heroSection_header_sortDropdown {
+    margin-right: 8px;
+    margin-left: 8px;
+  }
+
+  .heroSection_header_message {
+    font-size: 16px;
+  }
+
+  .heroSection_box {
+    padding-block: 1.75rem 3rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* Styles for screens with a maximum width of 768px */
+  .heroSection {
+    margin-bottom: 2rem;
+  }
+
+  .heroSection_header {
+    width: 95%;
+  }
+
+  .heroSection_header_sortDropdown {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+
+  .heroSection_header_message {
+    font-size: 12px;
+  }
+
+  .heroSection_box {
+    padding-block: 1.5rem 2rem;
+  }
+}
