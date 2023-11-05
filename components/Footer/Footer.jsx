@@ -1,3 +1,8 @@
+//Module Name: Footer
+//developed by:Shakil Ahmed
+//developed for:Ollyo
+//All right reserved to Shakil Ahmed
+
 import React from "react";
 import { TiSocialLinkedin, TiSocialGithub } from "react-icons/ti";
 
