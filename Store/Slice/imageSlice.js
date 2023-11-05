@@ -1,4 +1,8 @@
-// imageSlice.js
+//Module Name: Image Slice
+//developed by:Shakil Ahmed
+//developed for:Ollyo
+//All right reserved to Shakil Ahmed
+
 import { createSlice } from "@reduxjs/toolkit";
 
 import images from "../../public/images";
