@@ -1,3 +1,8 @@
+//Module Name: Button
+//developed by:Shakil Ahmed
+//developed for:Ollyo
+//All right reserved to Shakil Ahmed
+
 import React from "react";
 import Style from "./Button.module.css";
 
