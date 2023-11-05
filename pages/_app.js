@@ -8,7 +8,7 @@ const App = ({ Component, pageProps }) => (
   <div>
     <Provider store={store}>
       <NavBar />
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
       <Footer />
     </Provider>
   </div>
