@@ -2,21 +2,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Set the height to 100vh to make it take the full height of the viewport */
+  height: 100vh;
 }
 
 .footer {
   width: 100%;
   padding-block: 1.5rem;
   position: relative;
-  text-align: center; /* Center the text inside the footer */
+  text-align: center;
 }
 
 .footer_box {
-  width: 80%;
+  width: 25%;
   margin: 0 auto;
   display: grid;
-  /* grid-template-columns: 1.3fr repeat(2, 1fr) 2fr; */
   align-items: flex-start;
   justify-content: space-between;
   gap: 3rem;
@@ -28,7 +27,7 @@
   gap: 1.3rem;
   font-size: 1.5rem;
   align-items: center;
-  justify-content: center; /* Center the social icons horizontally */
+  justify-content: center;
 }
 
 .footer_social a {

@@ -8,8 +8,8 @@
   background-color: rgba(255, 30, 30, 0.871);
   color: #fff;
   border: none;
-  border-radius: 4px; /* Set border radius if desired */
-  padding: 10px 20px; /* Set padding for the button */
+  border-radius: 4px;
+  padding: 10px 20px;
   cursor: pointer;
   font-size: 12px;
   transition: background-color 0.3s ease;

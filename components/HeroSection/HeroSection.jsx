@@ -48,39 +48,35 @@ const HeroSection = () => {
 
   return (
     <div className={Style.heroSection}>
-      <div className={Style.heroSection_box}>
-        <div className={Style.heroSection_box_header}>
-          <div className={Style.sortDropdown}>
-            <select
-              value={selectedSortOption}
-              onChange={(e) => handleSortChange(e.target.value)}
-            >
-              <option value="">Select Sorting Option</option>
-              <option value="asc">Sort Ascending</option>
-              <option value="desc">Sort Descending</option>
-            </select>
-          </div>
-          <div className={Style.HeroSection_message}>{message}</div>
-          {selectedCount > 0 && (
-            <Button btnName={"Delete"} handleClick={handleDeleteClick} />
-          )}
+      <div className={Style.heroSection_header}>
+        <div className={Style.heroSection_header_sortDropdown}>
+          <select
+            value={selectedSortOption}
+            onChange={(e) => handleSortChange(e.target.value)}
+          >
+            <option value="">Select Sorting Option</option>
+            <option value="asc">Sort Ascending</option>
+            <option value="desc">Sort Descending</option>
+          </select>
         </div>
-        {/* <div className={Style.HeroSection_box_button}>
-            <div className={Style.HeroSection_message}>{message}</div>
-            {selectedCount > 0 && (
-              <Button btnName={"Delete"} handleClick={handleDeleteClick} />
-            )}
-          </div> */}
+        <div className={Style.heroSection_header_message}>{message}</div>
+        {selectedCount > 0 && (
+          <Button btnName={"Delete"} handleClick={handleDeleteClick} />
+        )}
+      </div>
+      <div className={Style.heroSection_box}>
         <div className={Style.rowContainer}>
           {ImagesArray.map((image, index) => (
             <div
               key={image.id}
-              className={`gallery-image ${
-                image.id === featuredImageId ? Style.featuredImage : ""
-              }`}
+              className={Style.rowContainer_box}
+              // className={`gallery-image ${
+              //   image.id === featuredImageId ? Style.featuredImage : ""
+              // }`}
             >
               <input
                 type="checkbox"
+                className={Style.checkboxOverlay}
                 checked={selectedImages.includes(image.id)}
                 onChange={() => handleCheckboxChange(image.id)}
               />

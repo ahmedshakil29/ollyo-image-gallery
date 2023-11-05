@@ -9,7 +9,7 @@ const NavBar = () => {
       <div className={Style.navbar_container}>
         <div className={Style.navbar_container_left}>
           <div className={Style.logo}>
-            <h1>Image Gallery</h1>
+            <h1>Ollyo Gallery</h1>
           </div>
         </div>
       </div>
